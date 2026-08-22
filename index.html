@@ -100,10 +100,7 @@
 
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-xl mx-auto">
             <a href="#demo-voz-agenda" class="w-full sm:w-auto bg-white text-slate-950 font-bold px-8 py-4 rounded-xl hover:bg-slate-200 transition-all shadow-lg text-center glow-effect">
-                Escuchar Demo de Voz
-            </a>
-            <a href="#contacto" class="w-full sm:w-auto border border-slate-700 bg-slate-900/50 hover:bg-slate-800 text-slate-200 font-semibold px-8 py-4 rounded-xl transition-all text-center glow-effect">
-                Agendar Consultoría
+                Pruébalo Ahora
             </a>
         </div>
     </section>
@@ -167,20 +164,20 @@
                     </a>
                 </div>
 
-                <!-- Tarjeta 2: Prueba en vivo por Voz (próximamente) -->
-                <div class="bg-[#111827] border border-[#1E293B] p-8 rounded-2xl backdrop-blur-md flex flex-col justify-between shadow-2xl relative overflow-hidden">
-                    <div class="absolute top-4 right-4 text-[10px] font-bold uppercase tracking-wider bg-[#1E293B] text-[#94A3B8] px-3 py-1 rounded-full border border-slate-700">
-                        Próximamente
-                    </div>
+                <!-- Tarjeta 2: Prueba en vivo por Voz -->
+                <div class="bg-[#111827] border border-[#1E293B] p-8 rounded-2xl backdrop-blur-md flex flex-col justify-between shadow-2xl relative group hover:border-[#0052FF]/50 transition-all duration-300">
                     <div>
-                        <div class="flex items-center space-x-3 mb-6">
-                            <div class="w-3 h-3 bg-[#0052FF] rounded-full"></div>
-                            <span class="text-sm font-medium text-[#0052FF]">Agente de Voz Bonavox AI</span>
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-3 h-3 bg-[#0052FF] rounded-full animate-pulse"></div>
+                                <span class="text-sm font-medium text-[#0052FF]">Agente Activo: Bonavox AI (ES/EN)</span>
+                            </div>
+                            <span class="text-xs bg-[#1E293B] text-[#94A3B8] px-3 py-1 rounded-full">&lt;800ms Latencia</span>
                         </div>
 
                         <h3 class="text-2xl font-bold mb-3">Habla con el Agente de Voz</h3>
                         <p class="text-[#94A3B8] text-sm mb-8">
-                            Llamada real, en vivo, directo desde tu navegador. Empatía avanzada, modismos regionales y latencia &lt;800ms para el sector de lujo.
+                            Llámanos ahora mismo y habla en vivo con el agente de Bonavox AI: empatía avanzada, modismos regionales y respuesta inmediata para el sector de lujo.
                         </p>
 
                         <div class="bg-[#0A0F1E] border border-[#1E293B] p-6 rounded-xl flex items-center space-x-4 mb-6">
@@ -188,15 +185,18 @@
                                 <i class="fa-solid fa-phone-volume text-xl"></i>
                             </div>
                             <div>
-                                <h4 class="text-sm font-semibold">Se activa muy pronto</h4>
-                                <p class="text-xs text-[#94A3B8]">Estamos afinando los últimos detalles</p>
+                                <h4 class="text-sm font-semibold">Prueba real, sin guion</h4>
+                                <p class="text-xs text-[#94A3B8]">+52 462 293 0063</p>
                             </div>
                         </div>
                     </div>
 
-                    <button disabled class="w-full bg-slate-800 text-slate-500 font-bold py-3.5 px-6 rounded-xl cursor-not-allowed flex items-center justify-center space-x-2">
-                        <span>Disponible muy pronto</span>
-                    </button>
+                    <a href="tel:+524622930063" class="w-full bg-[#0052FF] hover:bg-[#0052FF]/80 text-white font-bold py-3.5 px-6 rounded-xl transition-all duration-300 shadow-lg shadow-[#0052FF]/20 flex items-center justify-center space-x-2">
+                        <span>Llamar Ahora</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </a>
                 </div>
 
                 <!-- Tarjeta 3: Widget de Agendamiento Comercial -->
