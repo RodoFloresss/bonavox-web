@@ -130,58 +130,76 @@
             </div>
 
             <!-- Grid de Componentes (Voz vs Agendamiento) -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
 
-                <!-- Tarjeta 1: Demo de Voz de Bonavox AI -->
-                <div class="bg-[#111827] border border-[#1E293B] p-8 rounded-2xl backdrop-blur-md flex flex-col justify-between shadow-2xl relative group hover:border-[#0052FF]/50 transition-all duration-300">
+                <!-- Tarjeta 1: Prueba en vivo por WhatsApp -->
+                <div class="bg-[#111827] border border-[#1E293B] p-8 rounded-2xl backdrop-blur-md flex flex-col justify-between shadow-2xl relative group hover:border-[#25D366]/50 transition-all duration-300">
                     <div>
                         <div class="flex items-center justify-between mb-6">
                             <div class="flex items-center space-x-3">
-                                <div class="w-3 h-3 bg-[#00F5E1] rounded-full animate-pulse"></div>
-                                <span class="text-sm font-medium text-[#00F5E1]">Asistente Activo: Bonavox AI (ES/EN)</span>
+                                <div class="w-3 h-3 bg-[#25D366] rounded-full animate-pulse"></div>
+                                <span class="text-sm font-medium text-[#25D366]">Agente Activo: Bonavox AI (ES/EN)</span>
                             </div>
-                            <span class="text-xs bg-[#1E293B] text-[#94A3B8] px-3 py-1 rounded-full">&lt;800ms Latencia</span>
+                            <span class="text-xs bg-[#1E293B] text-[#94A3B8] px-3 py-1 rounded-full">Respuesta Inmediata</span>
                         </div>
 
-                        <h3 class="text-2xl font-bold mb-3">Simulador de Voz en Vivo</h3>
+                        <h3 class="text-2xl font-bold mb-3">Chatea con el Agente Ahora</h3>
                         <p class="text-[#94A3B8] text-sm mb-8">
-                            Prueba la naturalidad de nuestros agentes de voz con empatía avanzada, modismos regionales y respuesta inmediata para el sector de lujo.
+                            Escríbele directamente al agente de Bonavox AI por WhatsApp y compruébalo tú mismo: cualificación de leads y respuestas naturales en tiempo real.
                         </p>
 
-                        <!-- Reproductor Interactivo -->
-                        <div class="bg-[#0A0F1E] border border-[#1E293B] p-6 rounded-xl flex items-center justify-between mb-6">
-                            <div class="flex items-center space-x-4">
-                                <button id="play-voice-btn" class="w-12 h-12 bg-[#0052FF] hover:bg-[#0052FF]/80 text-white rounded-full flex items-center justify-center transition-transform hover:scale-105 shadow-lg shadow-[#0052FF]/30">
-                                    <svg id="play-icon" class="w-5 h-5 translate-x-0.5" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M8 5v14l11-7z"/>
-                                    </svg>
-                                    <svg id="pause-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M6 5h4v14H6zM14 5h4v14h-4z"/>
-                                    </svg>
-                                </button>
-                                <div>
-                                    <h4 class="text-sm font-semibold">Demo Asesor Comercial Bonavox</h4>
-                                    <p id="player-status" class="text-xs text-[#94A3B8]">Duración: 0:45 min • Conversación bilingüe</p>
-                                </div>
+                        <div class="bg-[#0A0F1E] border border-[#1E293B] p-6 rounded-xl flex items-center space-x-4 mb-6">
+                            <div class="w-12 h-12 bg-[#25D366] text-white rounded-full flex items-center justify-center shrink-0 shadow-lg shadow-[#25D366]/30">
+                                <i class="fa-brands fa-whatsapp text-2xl"></i>
                             </div>
-                            <div id="voice-bars" class="hidden sm:flex items-center space-x-1">
-                                <div class="w-1 h-6 bg-[#0052FF] rounded-full"></div>
-                                <div class="w-1 h-10 bg-[#00F5E1] rounded-full"></div>
-                                <div class="w-1 h-4 bg-[#0052FF] rounded-full"></div>
-                                <div class="w-1 h-8 bg-[#00F5E1] rounded-full"></div>
+                            <div>
+                                <h4 class="text-sm font-semibold">Prueba real, sin guion</h4>
+                                <p class="text-xs text-[#94A3B8]">Habla como lo haría un cliente real</p>
                             </div>
-                            <!-- Reemplaza la ruta con tu MP3 real exportado de Retell AI -->
-                            <audio id="voice-demo-audio" src="./demo-voz-bonavox.mp3" preload="none"></audio>
                         </div>
                     </div>
 
-                    <div class="border-t border-[#1E293B] pt-4 flex items-center justify-between text-xs text-[#94A3B8]">
-                        <span>Filtros Anti-Ruido Activos</span>
-                        <span class="text-[#00F5E1]">Alta Disponibilidad 24/7</span>
-                    </div>
+                    <a href="https://wa.me/524622930063?text=Hola%2C%20quiero%20probar%20el%20agente%20de%20Bonavox%20AI" target="_blank" rel="noopener noreferrer" class="w-full bg-[#25D366] hover:bg-[#20BD5A] text-white font-bold py-3.5 px-6 rounded-xl transition-all duration-300 shadow-lg shadow-[#25D366]/20 flex items-center justify-center space-x-2">
+                        <span>Abrir WhatsApp</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </a>
                 </div>
 
-                <!-- Tarjeta 2: Widget de Agendamiento Comercial -->
+                <!-- Tarjeta 2: Prueba en vivo por Voz (próximamente) -->
+                <div class="bg-[#111827] border border-[#1E293B] p-8 rounded-2xl backdrop-blur-md flex flex-col justify-between shadow-2xl relative overflow-hidden">
+                    <div class="absolute top-4 right-4 text-[10px] font-bold uppercase tracking-wider bg-[#1E293B] text-[#94A3B8] px-3 py-1 rounded-full border border-slate-700">
+                        Próximamente
+                    </div>
+                    <div>
+                        <div class="flex items-center space-x-3 mb-6">
+                            <div class="w-3 h-3 bg-[#0052FF] rounded-full"></div>
+                            <span class="text-sm font-medium text-[#0052FF]">Agente de Voz Bonavox AI</span>
+                        </div>
+
+                        <h3 class="text-2xl font-bold mb-3">Habla con el Agente de Voz</h3>
+                        <p class="text-[#94A3B8] text-sm mb-8">
+                            Llamada real, en vivo, directo desde tu navegador. Empatía avanzada, modismos regionales y latencia &lt;800ms para el sector de lujo.
+                        </p>
+
+                        <div class="bg-[#0A0F1E] border border-[#1E293B] p-6 rounded-xl flex items-center space-x-4 mb-6">
+                            <div class="w-12 h-12 bg-[#0052FF]/20 border border-[#0052FF]/40 text-[#0052FF] rounded-full flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-phone-volume text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-semibold">Se activa muy pronto</h4>
+                                <p class="text-xs text-[#94A3B8]">Estamos afinando los últimos detalles</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button disabled class="w-full bg-slate-800 text-slate-500 font-bold py-3.5 px-6 rounded-xl cursor-not-allowed flex items-center justify-center space-x-2">
+                        <span>Disponible muy pronto</span>
+                    </button>
+                </div>
+
+                <!-- Tarjeta 3: Widget de Agendamiento Comercial -->
                 <div class="bg-[#111827] border border-[#1E293B] p-8 rounded-2xl backdrop-blur-md flex flex-col justify-between shadow-2xl relative group hover:border-[#00F5E1]/50 transition-all duration-300">
                     <div>
                         <div class="flex items-center justify-between mb-6">
@@ -640,7 +658,7 @@
     </footer>
 
     <!-- BOTÓN FLOTANTE DE WHATSAPP -->
-    <a href="https://wa.me/52XXXXXXXXXX?text=Hola%2C%20quiero%20información%20sobre%20Bonavox%20AI"
+    <a href="https://wa.me/524622930063?text=Hola%2C%20quiero%20información%20sobre%20Bonavox%20AI"
        target="_blank"
        rel="noopener noreferrer"
        aria-label="Escríbenos por WhatsApp"
@@ -648,46 +666,6 @@
         <i class="fa-brands fa-whatsapp text-white text-3xl"></i>
     </a>
 
-    <!-- SCRIPT: Reproductor de Demo de Voz -->
-    <script>
-        const playBtn = document.getElementById('play-voice-btn');
-        const audio = document.getElementById('voice-demo-audio');
-        const playIcon = document.getElementById('play-icon');
-        const pauseIcon = document.getElementById('pause-icon');
-        const status = document.getElementById('player-status');
-        const bars = document.getElementById('voice-bars');
-
-        if (playBtn && audio) {
-            playBtn.addEventListener('click', () => {
-                if (audio.paused) {
-                    audio.play().catch(() => {
-                        status.textContent = 'Audio no disponible aún — sube el MP3 del demo.';
-                    });
-                } else {
-                    audio.pause();
-                }
-            });
-
-            audio.addEventListener('play', () => {
-                playIcon.classList.add('hidden');
-                pauseIcon.classList.remove('hidden');
-                bars.classList.add('flex');
-                bars.querySelectorAll('div').forEach(bar => bar.classList.add('animate-bounce'));
-                status.textContent = 'Reproduciendo demo bilingüe...';
-            });
-
-            audio.addEventListener('pause', () => {
-                playIcon.classList.remove('hidden');
-                pauseIcon.classList.add('hidden');
-                bars.querySelectorAll('div').forEach(bar => bar.classList.remove('animate-bounce'));
-                status.textContent = 'Duración: 0:45 min • Conversación bilingüe';
-            });
-
-            audio.addEventListener('ended', () => {
-                audio.currentTime = 0;
-            });
-        }
-    </script>
 
 </body>
 </html>
