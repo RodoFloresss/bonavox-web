@@ -293,7 +293,33 @@
             <!-- Cal inline embed code begins -->
             <div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline"></div>
             <script type="text/javascript">
-              (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; stroke = C.Cal = C.Cal || function () { let cal = stroke; var ar = arguments; if (!cal.q) { cal.q = []; } p(cal, ar); }; stroke.ns = {}; })(window, "https://app.cal.com/embed/embed.js", "init");
+              (function (C, A, L) {
+                let p = function (a, ar) { a.q.push(ar); };
+                let d = C.document;
+                C.Cal = C.Cal || function () {
+                  let cal = C.Cal;
+                  let ar = arguments;
+                  if (!cal.loaded) {
+                    cal.ns = {};
+                    cal.q = cal.q || [];
+                    d.head.appendChild(d.createElement("script")).src = A;
+                    cal.loaded = true;
+                  }
+                  if (ar[0] === L) {
+                    const api = function () { p(api, arguments); };
+                    const namespace = ar[1];
+                    api.q = api.q || [];
+                    if (typeof namespace === "string") {
+                      cal.ns[namespace] = cal.ns[namespace] || api;
+                      p(cal.ns[namespace], ar);
+                      p(cal, ["initNamespace", namespace]);
+                    } else p(cal, ar);
+                    return;
+                  }
+                  p(cal, ar);
+                };
+              })(window, "https://app.cal.com/embed/embed.js", "init");
+
               Cal("init", {origin:"https://cal.com"});
 
               Cal("inline", {
@@ -640,24 +666,6 @@
 
             </div>
 
-        </div>
-    </section>
-
-    <!-- SECCIÓN: FORMULARIO DE ONBOARDING -->
-    <section class="py-14 bg-slate-900/30 border-t border-slate-800/80 px-6">
-        <div class="max-w-3xl mx-auto text-center">
-            <h3 class="text-xl md:text-2xl font-bold text-white mb-3">
-                Brindanos toda la información de tu negocio aquí
-            </h3>
-            <p class="text-slate-400 text-sm md:text-base mb-6">
-                Completa este formulario con los datos de tu negocio para que podamos configurar tu Agente de Voz y WhatsApp a la medida.
-            </p>
-            <a href="https://silly-tang-8a6.notion.site/ad2dca556e454b15b3478174051628c5?pvs=105"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="inline-block bg-gradient-to-r from-[#0052FF] to-[#00F5E1] text-[#0A0F1E] font-bold py-3.5 px-8 rounded-xl transition-all duration-300 hover:opacity-90 shadow-lg shadow-[#0052FF]/20 glow-effect">
-                Completar formulario
-            </a>
         </div>
     </section>
 
