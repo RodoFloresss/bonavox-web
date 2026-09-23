@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elige tu plan | Bonavox AI</title>
+    <meta name="description" content="Suscríbete a tu paquete de Bonavox AI: agente de voz, WhatsApp, landing page y CRM.">
+    <link rel="icon" type="image/png" href="./favicon.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f4ff',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            900: '#0f172a',
+                            accent: '#10b981'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .glow-effect {
+            box-shadow: 0 0 20px -3px rgba(59, 130, 246, 0.25), 0 0 10px -2px rgba(16, 185, 129, 0.10);
+        }
+        .glow-effect-lg {
+            box-shadow: 0 0 30px -5px rgba(59, 130, 246, 0.3), 0 0 15px -3px rgba(16, 185, 129, 0.2);
+        }
+        .plan-toggle-btn {
+            transition: all 0.2s ease;
+        }
+        .plan-toggle-btn.active {
+            background: linear-gradient(to right, #0052FF, #00F5E1);
+            color: #0A0F1E;
+        }
+        .plan-toggle-btn:not(.active) {
+            background: transparent;
+            color: #94A3B8;
+        }
+        .plan-panel {
+            display: none;
+        }
+        .plan-panel.active {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- NAVBAR -->
+    <header class="fixed top-0 w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-10 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <img src="./logo-1.png" alt="Logo VA" class="h-14 w-auto object-contain rounded-lg glow-effect">
+            </div>
+            <div class="flex items-center justify-center">
+                <img src="./logo-4.png" alt="Bonavox AI" class="h-10 md:h-16 w-auto object-contain">
+            </div>
+            <a href="./index.html" class="text-slate-400 hover:text-white text-sm font-semibold flex items-center gap-2">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span class="hidden md:inline">Volver al sitio</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- ENCABEZADO DE LA PÁGINA -->
+    <section class="pt-36 pb-10 px-6 max-w-4xl mx-auto text-center relative overflow-hidden">
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brand-600/20 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+
+        <h1 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight mb-4">
+            Elige tu plan
+        </h1>
+        <p class="text-slate-400 text-base md:text-lg max-w-xl mx-auto">
+            Confirma el paquete que acordaste y suscríbete de forma segura con tarjeta. El cobro se renueva cada mes de forma automática.
+        </p>
+    </section>
+
+    <!-- TOGGLE ESTANDAR / PLUS -->
+    <section class="px-6 max-w-4xl mx-auto mb-8">
+        <div class="flex justify-center">
+            <div class="inline-flex bg-slate-900/60 border border-slate-800 rounded-xl p-1.5 gap-1">
+                <button onclick="mostrarPlan('estandar')" id="btn-estandar" class="plan-toggle-btn active px-6 py-2.5 rounded-lg text-sm font-bold">
+                    Planes estándar
+                </button>
+                <button onclick="mostrarPlan('plus')" id="btn-plus" class="plan-toggle-btn px-6 py-2.5 rounded-lg text-sm font-bold">
+                    Planes Plus
+                </button>
+            </div>
+        </div>
+        <p class="text-center text-slate-500 text-xs mt-4">
+            Plus es para más volumen de llamadas y conversaciones al mes. Si no estás seguro cuál te toca, revisa el plan que acordamos en tu propuesta.
+        </p>
+    </section>
+
+    <!-- AVISO: EL PAGO NO ACTIVA EL SERVICIO AL INSTANTE -->
+    <section class="px-6 max-w-3xl mx-auto mb-10">
+        <div class="bg-[#111827] border border-[#0052FF]/30 rounded-2xl p-5 flex flex-col sm:flex-row items-center gap-4 glow-effect">
+            <div class="w-10 h-10 rounded-full bg-[#00F5E1]/10 border border-[#00F5E1]/30 flex items-center justify-center text-[#00F5E1] shrink-0">
+                <i class="fa-solid fa-circle-info"></i>
+            </div>
+            <p class="text-[#94A3B8] text-sm text-center sm:text-left">
+                <strong class="text-[#F4F7FF]">Antes de suscribirte:</strong> tu pago activa el proceso de configuración, no significa que el sistema quede funcionando de inmediato. Necesitamos coordinar contigo los datos de tu negocio antes de armar tu agente.
+                <a href="https://wa.me/524622930063?text=Hola%2C%20quiero%20coordinar%20la%20configuraci%C3%B3n%20antes%20de%20suscribirme" target="_blank" rel="noopener" class="text-[#25D366] font-semibold hover:underline whitespace-nowrap">Escríbenos por WhatsApp</a>
+                si aún no hablaste con nosotros.
+            </p>
+        </div>
+    </section>
+
+    <!-- TABLAS DE PRECIOS -->
+    <section class="px-6 max-w-6xl mx-auto pb-24">
+
+        <div id="panel-estandar" class="plan-panel active">
+            <stripe-pricing-table pricing-table-id="prctbl_1UIzgg2H5y9fx47T3jidsSX7"
+                publishable-key="pk_live_51UIwjC2H5y9fx47TVbpSHdGs5TSc2UMvUWJsjikRyk1EGPPPakBtYKgvD66bsvyIR7uTvet3ZJk2Rq4x0sKdMbn900Ryv8Jrj9">
+            </stripe-pricing-table>
+        </div>
+
+        <div id="panel-plus" class="plan-panel">
+            <stripe-pricing-table pricing-table-id="prctbl_1UIzkA2H5y9fx47TJ7yzetAi"
+                publishable-key="pk_live_51UIwjC2H5y9fx47TVbpSHdGs5TSc2UMvUWJsjikRyk1EGPPPakBtYKgvD66bsvyIR7uTvet3ZJk2Rq4x0sKdMbn900Ryv8Jrj9">
+            </stripe-pricing-table>
+        </div>
+
+    </section>
+
+    <!-- BLOQUE DE CONFIANZA -->
+    <section class="px-6 max-w-3xl mx-auto pb-20">
+        <div class="bg-slate-900/40 border border-slate-800 rounded-2xl p-6 flex flex-col md:flex-row items-center gap-4 glow-effect">
+            <div class="w-12 h-12 rounded-full bg-[#00F5E1]/10 border border-[#00F5E1]/30 flex items-center justify-center text-[#00F5E1] text-xl shrink-0">
+                <i class="fa-solid fa-lock"></i>
+            </div>
+            <p class="text-slate-400 text-sm">
+                El pago se procesa de forma segura con Stripe. Bonavox AI nunca ve ni guarda los datos de tu tarjeta. Puedes cancelar cuando quieras escribiéndonos por WhatsApp.
+            </p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-slate-800/80 py-12 px-6 text-slate-500 text-sm">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+                <span class="font-bold text-slate-300">Bonavox AI</span> &copy; 2026. Todos los derechos reservados. Cancún & Riviera Maya.
+            </div>
+            <div class="flex gap-6">
+                <a href="./privacidad.html" class="hover:text-slate-400">Privacidad</a>
+                <a href="./terminos.html" class="hover:text-slate-400">Términos</a>
+                <a href="https://bonavoxai.com" class="hover:text-slate-400">bonavoxai.com</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+    <a href="https://wa.me/524622930063?text=Hola%2C%20tengo%20una%20duda%20sobre%20mi%20pago%20de%20Bonavox%20AI"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Escríbenos por WhatsApp"
+       class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25D366] hover:bg-[#20BD5A] rounded-full flex items-center justify-center shadow-lg shadow-black/40 transition-transform hover:scale-110">
+        <i class="fa-brands fa-whatsapp text-white text-3xl"></i>
+    </a>
+
+    <script>
+        function mostrarPlan(plan) {
+            document.getElementById('panel-estandar').classList.toggle('active', plan === 'estandar');
+            document.getElementById('panel-plus').classList.toggle('active', plan === 'plus');
+            document.getElementById('btn-estandar').classList.toggle('active', plan === 'estandar');
+            document.getElementById('btn-plus').classList.toggle('active', plan === 'plus');
+        }
+    </script>
+
+</body>
+</html>
